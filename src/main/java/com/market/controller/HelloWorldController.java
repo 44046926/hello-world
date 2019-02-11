@@ -31,8 +31,9 @@ public class HelloWorldController {
         logger.info("=======================info");
         logger.error("=======================error");
         logger.warn("=======================warn");
-        logger.warn("=======================a");
+        logger.warn("=======================aa");
         logger.warn("=======================b");
+        logger.warn("=======================e");
         return "login: " + id + ", " + name + ", path: " + logInfo.getPath();
     }
 
