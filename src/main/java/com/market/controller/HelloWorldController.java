@@ -32,6 +32,10 @@ public class HelloWorldController {
         logger.error("=======================error");
         logger.warn("=======================warn");
         logger.warn("=======================a");
+<<<<<<< HEAD
+=======
+        logger.warn("=======================b");
+>>>>>>> parent of 039df17... c
         return "login: " + id + ", " + name + ", path: " + logInfo.getPath();
     }
 
