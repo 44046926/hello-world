@@ -33,7 +33,6 @@ public class HelloWorldController {
         logger.warn("=======================warn");
         logger.warn("=======================a");
         logger.warn("=======================b");
-        logger.warn("=======================c");
         return "login: " + id + ", " + name + ", path: " + logInfo.getPath();
     }
 
