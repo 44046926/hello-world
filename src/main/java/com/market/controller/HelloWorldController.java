@@ -28,9 +28,13 @@ public class HelloWorldController {
     @RequestMapping(value = "/login/{id}/{name}", method = RequestMethod.GET)
     public String login(@PathVariable("id") Integer id, @PathVariable("name") String name) {
         validate(id, name);
-        logger.info("=======================info");
-        logger.error("=======================error");
-        logger.warn("=======================warn");
+        print();
+        if (true) {
+            logger.info("=======================info");
+            logger.error("=======================error");
+            logger.warn("=======================warn");
+        }
+
         return "login: " + id + ", " + name + ", path: " + logInfo.getPath();
     }
 
@@ -40,8 +44,13 @@ public class HelloWorldController {
     }
 
     private void validate(Integer id, String name) {
-        System.out.println("id" + id);
-        System.out.println("name" + name);
+        System.out.println("id: " + id);
+        System.out.println("name: " + name);
+    }
+
+    private void print() {
+        System.out.println("logInfo: " + logInfo);
+        System.out.println("getProperty(log.path): " + System.getProperty("log.path"));
     }
 
     private void insert(Integer id, String name) {
