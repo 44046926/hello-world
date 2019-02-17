@@ -9,7 +9,8 @@
     <packaging>jar</packaging>
 
     <name>hello-world</name>
-    <description>Demo project for Spring Boot</description>
+    <url>项目url：https://www.baidu.com</url>
+    <description>项目描述：Demo project for Spring Boot</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -61,6 +62,7 @@
     </dependencies>
 
     <build>
+        <finalName>tiandiyihao</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

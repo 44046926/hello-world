@@ -30,7 +30,7 @@ public class HelloWorldController {
         validate(id, name);
         print();
         if (true) {
-            logger.info("=======================info");
+            logger.info("=======================info我的");
             logger.error("=======================error");
             logger.warn("=======================warn");
         }

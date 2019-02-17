@@ -1,3 +1,6 @@
+/**
+ * 启动类
+ */
 package com.market;
 
 import org.springframework.boot.SpringApplication;
