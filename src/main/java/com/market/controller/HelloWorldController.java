@@ -1,5 +1,6 @@
 package com.market.controller;
 
+import com.market.config.BusinessException;
 import com.market.config.LogInfo;
 import com.market.config.ServerInfo;
 import org.slf4j.Logger;
@@ -9,8 +10,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/hello-world")
+@RequestMapping("/v1")
 public class HelloWorldController {
+
     @Autowired
     private ServerInfo serverInfo;
 
@@ -23,7 +25,17 @@ public class HelloWorldController {
     @Value("${spring.profiles.active}")
     private String profile;
 
+    @Value("${sex:woman}")
+    private String sex;
+
     private static final Logger logger = LoggerFactory.getLogger(HelloWorldController.class);
+
+    @PostMapping
+    public BusinessException addExcp(@RequestBody BusinessException excp) {
+        BusinessException exception = new BusinessException();
+        System.out.println("getStudentName...");
+        return exception;
+    }
 
     @RequestMapping(value = "/login/{id}/{name}", method = RequestMethod.GET)
     public String login(@PathVariable("id") Integer id, @PathVariable("name") String name) {
@@ -51,6 +63,10 @@ public class HelloWorldController {
     private void print() {
         System.out.println("logInfo: " + logInfo);
         System.out.println("getProperty(log.path): " + System.getProperty("log.path"));
+        System.out.println("getProperty(JAVA_HOME): " + System.getProperty("JAVA_HOME"));
+        System.out.println("getProperty(interval): " + System.getProperty("interval"));
+        System.out.println("getProperty(java.version): " + System.getProperty("java.version"));
+        System.out.println("sex: " + sex);
     }
 
     private void insert(Integer id, String name) {
