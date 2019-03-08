@@ -1,10 +1,11 @@
 package com.market.config;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-//@ConfigurationProperties(prefix = "log")
+@ConfigurationProperties(prefix = "log")
 public class LogInfo {
     @Value("${log.path}")
     private String path;
